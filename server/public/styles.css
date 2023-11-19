@@ -6,16 +6,16 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    background-color: #000;
-    color: #fff;
+body {color: #fff;
 }
 
-main {
+.section {
     height: 100vh;
     padding: 1rem;
     display: flex;
     flex-flow: column;
+
+    background-color: #320945b8;
 }
 
 form {
@@ -31,20 +31,34 @@ form {
 input {
     flex-grow: 1;
     max-width: calc(80% - .25rem);
+
+    outline: none;
 }
 
 button {
     width: 20%;
+    cursor: pointer;
+
+    transition: background-color 250ms linear;
+}
+
+button:hover,
+button:focus {
+    background-color: #cacaca;
 }
 
 input,
 button {
-    border-radius: 10px;
     padding: .5rem;
+
+    background-color: #fff;
+    border: 3px solid #320945;
+    border-radius: 10px;
 }
 
 .chat-display {
-    background-color: #333;
+    background-color: #320945;
+    
     list-style-type: none;
     width: 100%;
     max-width: 600px;
@@ -60,7 +74,6 @@ button {
 
 .post {
     background-color: #eee;
-    border-radius: 10px;
     padding: 0 0 .25rem;
     margin: .5rem;
     overflow: hidden;
@@ -70,11 +83,20 @@ button {
 .post--left {
     width: 60%;
     align-self: flex-start;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: -10px;
 }
 
 .post--right {
     width: 60%;
     align-self: flex-end;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .post__header {
@@ -87,11 +109,12 @@ button {
 }
 
 .post__header--user {
-    background-color: blue;
+    background-color: #e3c72b;
+
 }
 
 .post__header--reply {
-    background-color: purple;
+    background-color: #0c6f0d;
 }
 
 .post__header--name {

@@ -33,7 +33,7 @@ io.on('connection', socket => {
     console.log(`User ${socket.id} connected`)
 
     // Upon connection - only user
-    socket.emit('message', bldMsg(ADMIN, 'Welcome to Chat App'))
+    socket.emit('message', bldMsg(ADMIN, 'Welcome to Chat App!'))
 
     socket.on('enterRoom', ({ name, room }) => {
         //leave previous room

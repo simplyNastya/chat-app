@@ -15,37 +15,41 @@
   </head>
   <body>
     <main>
-      <form class="form-join">
-        <input
-          type="text"
-          id="name"
-          maxlength="12"
-          placeholder="Your name"
-          size="5"
-          required
-        />
-        <input
-          type="text"
-          id="room"
-          placeholder="Chat room"
-          size="5"
-          required
-        />
-        <button type="submit" id="join">Join</button>
-      </form>
+      <section class="section">
+        <form class="form-join">
+          <input
+            type="text"
+            id="name"
+            maxlength="12"
+            placeholder="Your name"
+            size="5"
+            required
+          />
+          <input
+            type="text"
+            id="room"
+            placeholder="Chat room"
+            size="5"
+            required
+          />
+          <button type="submit" id="join" class="join-btn" disabled>
+            Join
+          </button>
+        </form>
 
-      <ul class="chat-display"></ul>
+        <ul class="chat-display"></ul>
 
-      <p class="user-list"></p>
+        <p class="user-list"></p>
 
-      <p class="room-list"></p>
+        <p class="room-list"></p>
 
-      <p class="activity"></p>
+        <p class="activity"></p>
 
-      <form class="form-msg">
-        <input type="text" placeholder="Your message" id="message" required />
-        <button type="submit">Send</button>
-      </form>
+        <form class="form-msg">
+          <input type="text" placeholder="Your message" id="message" required />
+          <button type="submit" class="send-btn" disabled>Send</button>
+        </form>
+      </section>
     </main>
   </body>
 </html>

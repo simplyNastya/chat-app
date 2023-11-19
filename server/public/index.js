@@ -3,10 +3,29 @@ const socket = io('https://chat-app-3k4m.onrender.com')
 const msgInput = document.querySelector('#message')
 const nameInput = document.querySelector('#name')
 const chatRoom = document.querySelector('#room')
+const joinBtn = document.querySelector('.join-btn')
+const sendBtn = document.querySelector('.send-btn')
 const activity = document.querySelector('.activity')
 const usersList = document.querySelector('.user-list')
 const roomList = document.querySelector('.room-list')
 const chatDisplay = document.querySelector('.chat-display')
+
+function toggleDisable() {
+    if (!nameInput.value && !chatRoom.value) {
+        joinBtn.setAttribute('disabled')
+    } else {
+        joinBtn.removeAttribute('disabled')
+    }
+
+    if (!msgInput.value) {
+        sendBtn.setAttribute('disabled')
+    } else {
+        sendBtn.removeAttribute('disabled')
+    }
+}
+
+chatRoom.addEventListener('input', toggleDisable)
+msgInput.addEventListener('input', toggleDisable)
 
 function sendMessage(e) {
     e.preventDefault()
@@ -60,7 +79,7 @@ socket.on("message", (data) => {
     } else {
         li.innerHTML = `<div class="post__text">${text}</div>`
     }
-    document.querySelector('.chat-display').appendChild(li)
+    chatDisplay.appendChild(li)
 
     chatDisplay.scrollTop = chatDisplay.scrollHeight
 })
